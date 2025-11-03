@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "pnpm start:frontend & pnpm start:backend",
+    "start": "concurrently \"pnpm start:frontend\" \"pnpm start:backend\"",
     "start:frontend": "cd frontend && pnpm dev",
     "start:backend": "cd backend && pnpm start:dev",
     "build:frontend": "cd frontend && pnpm build",
     "build:backend": "cd backend && pnpm build",
-    "install:all": "pnpm install && frontend && pnpm install && cd ../backend && pnpm install"
+    "install:all": "pnpm install && cd frontend && pnpm install && cd ../backend && pnpm install"
   },
   "keywords": [
     "vue3",
@@ -19,5 +19,8 @@
   ],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.18.1"
+  "packageManager": "pnpm@10.18.1",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
 }
