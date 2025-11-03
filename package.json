@@ -4,9 +4,19 @@
   "description": "Vue3+TypeScript+NestJS 个人博客全栈项目",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pnpm start:frontend & pnpm start:backend",
+    "start:frontend": "cd frontend && pnpm dev",
+    "start:backend": "cd backend && pnpm start:dev",
+    "build:frontend": "cd frontend && pnpm build",
+    "build:backend": "cd backend && pnpm build",
+    "install:all": "pnpm install && frontend && pnpm install && cd ../backend && pnpm install"
   },
-  "keywords": [],
+  "keywords": [
+    "vue3",
+    "typescript",
+    "nestjs"
+  ],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.18.1"
